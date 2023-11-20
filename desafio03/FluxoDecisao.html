@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function perguntar(mensagem) {
+        return prompt(mensagem);
+    }
+    alert("Bem-vindo ao jogo de escolhas! Vamos explorar o mundo da programação.");
+    const areaPrincipal = perguntar("Você prefere seguir para área de Front-End ou Back-End? (Front-End/Back-End)");
+     if (areaPrincipal.toLowerCase() === 'front-end') {
+        const frontEndEscolha = perguntar("Ótima escolha! Agora, você quer aprender React ou Vue? (React/Vue)");
+    
+        if (frontEndEscolha.toLowerCase() === 'react') {
+            const especializacao = perguntar("Você deseja se especializar em Front-End ou se tornar Fullstack? (Front-End/Fullstack)");
+            if (especializacao.toLowerCase() === 'front-end') {
+                alert("Parabéns! Você está se especializando em React. Continue assim!");
+            } else if (especializacao.toLowerCase() === 'fullstack') {
+                alert("Você está indo para o caminho Fullstack! Diversifique suas habilidades para se tornar um desenvolvedor completo.");
+            }
+        } else if (frontEndEscolha.toLowerCase() === 'vue') {
+            const especializacao = perguntar("Você deseja se especializar em Front-End ou se tornar Fullstack? (Front-End/Fullstack)");
+            if (especializacao.toLowerCase() === 'front-end') {
+                alert("Você está se especializando em Vue. Continue aprendendo e aprimorando suas habilidades!");
+            } else if (especializacao.toLowerCase() === 'fullstack') {
+                alert("Ótima escolha! O caminho Fullstack pode ser desafiador, mas muito recompensador.");
+            }
+        } else {
+            alert("Escolha inválida para a tecnologia de Front-End.");
+        }
+    } else if (areaPrincipal.toLowerCase() === 'back-end') {
+        const backEndEscolha = perguntar("Interessante! Agora, você quer aprender C# ou Java? (C#/Java)");
+    
+        if (backEndEscolha.toLowerCase() === 'c#') {
+            const especializacao = perguntar("Você deseja se especializar em Back-End ou se tornar Fullstack? (Back-End/Fullstack)");
+            if (especializacao.toLowerCase() === 'back-end') {
+                alert("Excelente escolha! C# é uma linguagem poderosa para Back-End. Mantenha o foco!");
+            } else if (especializacao.toLowerCase() === 'fullstack') {
+                alert("Você está no caminho para se tornar um desenvolvedor Fullstack! Continue aprendendo.");
+            }
+        } else if (backEndEscolha.toLowerCase() === 'java') {
+            const especializacao = perguntar("Você deseja se especializar em Back-End ou se tornar Fullstack? (Back-End/Fullstack)");
+            if (especializacao.toLowerCase() === 'back-end') {
+                alert("Java é uma escolha sólida para o Back-End. Siga em frente e se aprofunde!");
+            } else if (especializacao.toLowerCase() === 'fullstack') {
+                alert("O caminho Fullstack pode abrir muitas portas para você. Boa sorte na jornada!");
+            }
+        } else {
+            alert("Escolha inválida para a tecnologia de Back-End.");
+        }
+    } else {
+        alert("Escolha inválida para a área principal.");
+    }
+    
+    const tecnologias = [];
+    let adicionarTecnologia = perguntar("Quais tecnologias adicionais você gostaria de aprender?");
+    
+    while (adicionarTecnologia.toLowerCase() !== 'não') {
+        tecnologias.push(adicionarTecnologia);
+        const comentario = `Ótima escolha! ${adicionarTecnologia} é uma tecnologia interessante.`;
+        alert(comentario);
+        adicionarTecnologia = perguntar("Tem mais alguma tecnologia que você gostaria de aprender? (Digite 'não' para encerrar)");
+    }
+    
+    if (tecnologias.length > 0) {
+        alert(`Lista de tecnologias escolhidas: ${tecnologias.join(", ")}`);
+    } else {
+        alert("Você não escolheu nenhuma tecnologia adicional.");
+    }
+    </script> 
+</body>
+</html>

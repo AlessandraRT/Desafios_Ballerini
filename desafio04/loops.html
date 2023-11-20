@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Adivinhação</title>
+</head>
+<body>
+    <script>
+        var numeroParaAdivinhar = Math.floor(Math.random() * 10);
+        var tentativasRestantes = 3;
+        while (tentativasRestantes > 0) {
+            var chute = parseInt(prompt("Tente adivinhar o número (entre 0 e 10):"));
+           if (chute === numeroParaAdivinhar) {
+                alert("Parabéns! Você acertou!");
+                break; 
+            } else {
+                alert("Tente novamente. Você tem mais " + (tentativasRestantes - 1) + " tentativa(s).");
+                tentativasRestantes--;
+            }
+        }
+            if (tentativasRestantes === 0) {
+            alert("Suas tentativas acabaram. O número era: " + numeroParaAdivinhar);
+        }
+    </script>
+</body>
+</html>
